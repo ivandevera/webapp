@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5000/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+	function startTime() {		//get current time
+	    var today=new Date();
+	    var h=today.getHours();
+	    var m=today.getMinutes();
+	    var s=today.getSeconds();
+	    m = checkTime(m);
+	    s = checkTime(s);
+	    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+	    var t = setTimeout(function(){startTime()},500);
+	}
+
+	function checkTime(i) {
+	    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+	    return i;
+	}
+</script>
+<style type="text/css">
+	body{
+		background-color: grey;
+  		background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: center; 
+  		background-size: 100% 100%;
+	}
+	#mainDiv{
+		
+	}
+	#inputDiv{
+		position: relative;
+		left: 0%;
+		top: -45px;
+	}
+	#input
+	{
+		left: 20%;
+		background: #333;
+		color: #ccc;
+		width: 700px;
+		height: 35px;
+		padding: 6px 15px 6px 35px;
+		transition: 500ms all ease;
+		border: 1px solid #333;
+		font-size: 25px;
+		position: relative;
+		top: 24.4px;
+		border-radius: 5px;
+	}
+	#input:hover
+	{
+		box-shadow: 12px 13px 0px rgba(204, 211, 51, 0.38),
+		-11px -14px 0px rgba(241, 96, 0, 0.28),
+		18px -24px 0px rgba(0, 0, 0, 0.34),
+		33px -6px 0px rgba(39, 74, 214, 0.28);
+	}
+	.text
+	{
+		left: 30%;
+		background: #333;
+		color: #ccc;
+		width: 300px;
+		height: 20px;
+		padding: 6px 15px 6px 35px;
+		transition: 500ms all ease;
+		border: 1px solid #333;
+		font-size: 18px;
+		position: relative;
+		top: 24.4px;
+		border-radius: 5px;
+	}
+	.text:hover
+	{
+		box-shadow: 12px 13px 0px rgba(204, 211, 51, 0.38),
+		-11px -14px 0px rgba(241, 96, 0, 0.28),
+		18px -24px 0px rgba(0, 0, 0, 0.34),
+		33px -6px 0px rgba(39, 74, 214, 0.28);
+	}
+	#submit{
+		border: 1px;
+		left: 20%;
+		height: 50px;
+		position: relative;
+		top: 19px;
+		border-radius: 5px;
+		transition: 500ms all ease;
+		background: #333;
+		color: #ccc;
+	}
+	#submit:hover
+	{
+		box-shadow: 7px 8px 0px rgba(204, 211, 51, 0.38),
+		-6px -8px 0px rgba(241, 96, 0, 0.28),
+		11px -19px 0px rgba(0, 0, 0, 0.34),
+		15px -6px 0px rgba(39, 74, 214, 0.28);
+	}
+	.edtbtn:hover
+	{
+		box-shadow: 7px 8px 0px rgba(204, 211, 51, 0.38),
+		-6px -8px 0px rgba(241, 96, 0, 0.28),
+		11px -19px 0px rgba(0, 0, 0, 0.34),
+		15px -6px 0px rgba(39, 74, 214, 0.28);
+	}
+	.delbtn:hover
+	{
+		box-shadow: 7px 8px 0px rgba(204, 211, 51, 0.38),
+		-6px -8px 0px rgba(241, 96, 0, 0.28),
+		11px -19px 0px rgba(0, 0, 0, 0.34),
+		15px -6px 0px rgba(39, 74, 214, 0.28);
+	}
+	.edtbtn{
+		position: absolute;
+		border: 1px;
+		left: 85%;
+		width: 80px;
+		border-radius: 5px;
+		transition: 500ms all ease;
+		background: #333;
+		color: #ccc;
+		height: 50px;
+	}
+	.delbtn{
+		border: 1px;
+		position: absolute;
+		left: 92%;
+		width: 80px;
+		border-radius: 5px;
+		transition: 500ms all ease;
+		background: #333;
+		color: #ccc;
+		height: 50px;
+	}
+	#outputDiv{
+		position: relative;
+		top: -20px;
+
+	}
+	h3{
+		padding-top: 5px;
+		position: relative;
+		left: 265px;
+		white-space: nowrap;
+	  	overflow: hidden;
+	  	text-overflow: ellipsis;
+	  	max-width: 775px;
+	  	color: white;
+	  	font-family: 'Source Sans Pro', sans-serif;
+	}
+	tr{
+		max-height: 20px;
+		height: 20px;
+		padding-top: 10px;
+	}
+	td{
+
+	}
+	#txt{
+		text-align: center;
+		position: relative;
+		top: -20px;
+		color: white;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/script.js"></script>
+	<title>To Do List</title>
+	<!-- <script src="./To Do List_files/jquery.min.js"></script>
+	<script type="text/javascript" src="./To Do List_files/script.js"></script> -->
+</head>
+<body onload="startTime()">
+	<div id = "mainDiv"> <!-- display time -->
+		<h2 id='txt'></h2> 
+		<div id="inputDiv">
+	
+			<input type="input" id="input" name="input" placeholder="New task">
+			<input type="submit" id="submit" name="submit">
+		</div>
+		<div id="outputDiv">
+			<table id="outputTable">
+			<tbody></tbody></table>
+		</div>
+	</div>
+</body>
+</html>
