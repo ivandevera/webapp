@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template, request
-import function
+from webapp import function
+from webapp import app
+
 
 app = Flask(__name__)
 api = function.api()

@@ -1,8 +1,7 @@
 from pymongo import MongoClient
-
-route = MongoClient()
-
-dbase = route.TDList
+db = MongoClient("127.2.78.2", 27017)
+db.webapp.authenticate('admin', 'QjTGRj1Ag2XX')
+dbase = db.webapp
 
 class api(object):
 
